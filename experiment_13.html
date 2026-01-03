@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Functions and Scope</title>
+</head>
+<body>
+
+    <h2>JavaScript User-Defined Functions & Scope</h2>
+
+    <button onclick="demoScope()">Run Program</button>
+
+    <p id="output"></p>
+
+    <script>
+        function demoScope() {
+            var result = "";
+            var a = 10;
+            let b = 20;
+            const c = 30;
+
+            result += "Inside function:<br>";
+            result += "var a = " + a + "<br>";
+            result += "let b = " + b + "<br>";
+            result += "const c = " + c + "<br><br>";
+
+            if (true) {
+                var a = 100;   
+                let b = 200;   
+                const c = 300; 
+
+                result += "Inside block:<br>";
+                result += "var a = " + a + "<br>";
+                result += "let b = " + b + "<br>";
+                result += "const c = " + c + "<br><br>";
+            }
+
+            result += "After block:<br>";
+            result += "var a = " + a + "<br>";
+            result += "let b = " + b + "<br>";
+            result += "const c = " + c + "<br>";
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

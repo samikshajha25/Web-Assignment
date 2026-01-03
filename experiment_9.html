@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Web Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Mobile-first base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-size: 1rem;
+}
+
+header {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.container {
+    padding: 1rem;
+}
+
+.card {
+    background-color: #f2f2f2;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ddd;
+}
+
+@media (min-width: 600px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .card {
+        width: 50%;
+    }
+}
+
+@media (min-width: 900px) {
+    body {
+        font-size: 1.1rem;
+    }
+
+    header h1 {
+        font-size: 3vw;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+</style>
+<body>
+
+    <header>
+        <h1>My Responsive Website</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main class="container">
+        <section class="card">
+            <h2>Mobile-First Design</h2>
+            <p>
+                This layout is designed for mobile screens first
+                and adapts to larger screens using media queries.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Flexible Units</h2>
+            <p>
+                CSS units like %, rem, and vw help create
+                responsive designs.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Responsive Web Page</p>
+    </footer>
+
+</body>
+</html>

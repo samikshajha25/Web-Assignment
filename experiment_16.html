@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show / Hide & Toggle Class</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #333;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .highlight {
+            background-color: lightgreen;
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Show / Hide & Toggle CSS Class</h2>
+
+    <button onclick="toggleBox()">Show / Hide Box</button>
+    <button onclick="toggleStyle()">Toggle Style</button>
+
+    <div id="myBox" class="box">
+        This box can be shown, hidden, and styled dynamically.
+    </div>
+
+    <script>
+        function toggleBox() {
+            var box = document.getElementById("myBox");
+            box.classList.toggle("hidden");
+        }
+
+        function toggleStyle() {
+            var box = document.getElementById("myBox");
+            box.classList.toggle("highlight");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="title">DOM Manipulation Demo</h2>
+
+    <div class="box">
+        <p id="text">This text will change.</p>
+        <p class="info">This is selected using querySelector.</p>
+
+        <button onclick="changeContent()">Change Content</button>
+    </div>
+
+    <script>
+        function changeContent() {
+
+            // Using getElementById()
+            document.getElementById("title").innerHTML =
+                "Title Changed Using getElementById()";
+
+            // Using querySelector()
+            document.querySelector(".info").innerHTML =
+                "Content changed using querySelector()";
+
+            // Using innerHTML
+            document.getElementById("text").innerHTML =
+                "<b>Text updated using innerHTML</b>";
+        }
+    </script>
+
+</body>
+</html>

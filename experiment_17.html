@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listener Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #box {
+            width: 250px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin: 20px 0;
+            border: 2px solid #333;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Event Listeners</h2>
+
+    <!-- Mouse Event -->
+    <div id="box">Hover over me</div>
+
+    <!-- Keyboard Event -->
+    <input type="text" id="textInput" placeholder="Type something">
+
+    <br><br>
+
+    <button id="addBtn">Add Events</button>
+    <button id="removeBtn">Remove Events</button>
+
+    <p id="output"></p>
+
+    <script>
+        var box = document.getElementById("box");
+        var input = document.getElementById("textInput");
+        var output = document.getElementById("output");
+
+        // Mouse event handler
+        function mouseOverHandler() {
+            box.style.backgroundColor = "lightgreen";
+            box.innerHTML = "Mouse Over!";
+        }
+
+        function mouseOutHandler() {
+            box.style.backgroundColor = "lightblue";
+            box.innerHTML = "Hover over me";
+        }
+
+        // Keyboard event handler
+        function keyHandler() {
+            output.innerHTML = "You typed: " + input.value;
+        }
+
+        // Add event listeners
+        document.getElementById("addBtn").addEventListener("click", function () {
+            box.addEventListener("mouseover", mouseOverHandler);
+            box.addEventListener("mouseout", mouseOutHandler);
+            input.addEventListener("keyup", keyHandler);
+            alert("Event listeners added!");
+        });
+
+        // Remove event listeners
+        document.getElementById("removeBtn").addEventListener("click", function () {
+            box.removeEventListener("mouseover", mouseOverHandler);
+            box.removeEventListener("mouseout", mouseOutHandler);
+            input.removeEventListener("keyup", keyHandler);
+            alert("Event listeners removed!");
+        });
+    </script>
+
+</body>
+</html>
